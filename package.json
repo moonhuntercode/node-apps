@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "description": "node prueba 1",
   "main": "./src/index.js",
-  "type": "module",
   "scripts": {
     "dev": "nodemon  src/index.js --exec babel-node",
-    "test": "mocha --exit",
-    "build": "babel lib -d dist",
-    "start": " npm run build && npm run serve",
+    "test": "babel testbeta/home.test.js -d test && mocha  --exit",
+    "build": "babel lib -d dist && babel testbeta/home.test.js -d test",
+    "start": "npm run build && npm run serve",
     "serve": "nodemon dist/index.js"
   },
   "repository": {

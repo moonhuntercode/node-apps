@@ -1,8 +1,8 @@
-import express from 'express';
-import assert from 'assert';
-import expect from 'chai'
-import request from 'supertest';
-import app from '../lib/index';
+const assert = require('assert');
+const expect = require('chai').expect
+const request = require('supertest');
+const app = require('../dist/index')
+
 
 describe('Unit testing the /home route', function() {
 
@@ -13,12 +13,13 @@ describe('Unit testing the /home route', function() {
           assert.equal(response.status, 200)
       })
   });
-});
 
-it('should return message on rendering', function() {
-  return request(app)
+  it('should return message on rendering', function() {
+    return request(app)
       .get('/home')
       .then(function(response){
           expect(response.text).to.contain('Welcome Home Dude !!');
       })
+  });
+
 });
