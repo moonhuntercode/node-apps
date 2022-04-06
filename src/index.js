@@ -1,6 +1,9 @@
 import express from 'express'
+import {Server as WebSocketServer} from 'socket.io'
+
 const app=express();
 
+const io=new WebSocketServer();
 app.set('title', 'Geek');
 var PORT = 3001;
 var path = require ('path');
@@ -22,4 +25,4 @@ app.listen(PORT, function(err){
     if (err) console.log("Error in server setup")
     console.log(`Server listening   on http://www.localhost:${PORT}`);
 })
-module.exports= app;
+module.exports=app;

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon  src/index.js --exec babel-node",
     "test": "babel testbeta/home.test.js -d test && mocha  --exit",
-    "build": "babel lib -d dist && babel testbeta/home.test.js -d test",
+    "build": "babel src -d dist && babel testbeta/home.test.js -d test",
     "start": "npm run build && npm run serve",
     "serve": "nodemon dist/index.js"
   },
